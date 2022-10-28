@@ -56,15 +56,18 @@ docker-compose up -d
 
 Acessar o container
 ```sh
-docker-compose exec app bash
+docker-compose exec --user=root app bash
 ```
 
+Setar permissão para evitar erros (ambiente dev)
+```sh
+chmod -R 777 storage/logs storage/framework
+```
 
 Instalar as dependências do projeto
 ```sh
 composer install
 ```
-
 
 Gerar a key do projeto Laravel
 ```sh
